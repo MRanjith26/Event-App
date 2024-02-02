@@ -1,0 +1,24 @@
+/* Write your CSS here */
+.event-card {
+  margin: 5px;
+}
+.event-image {
+  width: 350px;
+}
+.event-name {
+  font-family: 'Roboto';
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: 550;
+}
+.event-location {
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: #ffffff;
+}
+.click-button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

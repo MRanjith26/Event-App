@@ -1,0 +1,54 @@
+/* Write your CSS here */
+.initial-card {
+  font-family: 'Roboto';
+  text-align: center;
+  margin: auto;
+  padding: 0px 15px;
+}
+
+.initial-text {
+  font-family: 'Roboto';
+  font-size: 30px;
+  font-weight: 550;
+}
+
+.status-text {
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  color: #475569;
+}
+.yet-image {
+  width: 500px;
+}
+.Register-image {
+  width: 150px;
+}
+.Closed-image {
+  width: 350px;
+}
+.status-para {
+  font-family: 'Roboto';
+  font-size: 25px;
+  color: #3a4b63;
+  padding: 0px 20px;
+}
+.status-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.button {
+  width: 400px;
+  padding: 15px 0px;
+  border-radius: 9px;
+  border: none;
+  color: #ffffff;
+  background-color: #0967d2;
+  font-family: 'Roboto';
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+}
