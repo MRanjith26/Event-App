@@ -3,10 +3,10 @@ import './index.css'
 
 const EventItem = props => {
   const {eventDetails, getClickedId} = props
-  const {id, imageUrl, name, location} = eventDetails
+  const {registrationStatus, imageUrl, name, location} = eventDetails
 
   const onClickImage = () => {
-    getClickedId(id)
+    getClickedId(registrationStatus)
   }
 
   return (

@@ -4,6 +4,7 @@
 }
 .event-image {
   width: 350px;
+  border: none;
 }
 .event-name {
   font-family: 'Roboto';
@@ -21,4 +22,7 @@
   border: none;
   cursor: pointer;
   outline: none;
+}
+.act-img {
+  border: 1px solid #2dd4bf;
 }

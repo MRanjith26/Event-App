@@ -57,8 +57,10 @@ const eventsList = [
 class Events extends Component {
   state = {eventStatus: 'INITIAL'}
 
-  getClickedId = id => {
-    const filteredList = eventsList.filter(eachItem => eachItem.id.includes(id))
+  getClickedId = Status => {
+    const filteredList = eventsList.filter(eachItem =>
+      eachItem.registrationStatus.includes(Status),
+    )
 
     const {registrationStatus} = filteredList[0]
 
@@ -69,10 +71,10 @@ class Events extends Component {
 
   renderEventLists = () => (
     <ul className="events-container">
-      {eventsList.map(Event => (
+      {eventsList.map(event => (
         <EventItem
-          key={Event.id}
-          eventDetails={Event}
+          key={event.id}
+          eventDetails={event}
           getClickedId={this.getClickedId}
         />
       ))}
