@@ -55,46 +55,48 @@ const eventsList = [
 // Write your code here
 
 class Events extends Component {
-  state = {eventStatus: 'INITIAL'}
+  state = {activeEventId: ''}
 
-  getClickedId = Status => {
-    const filteredList = eventsList.filter(eachItem =>
-      eachItem.registrationStatus.includes(Status),
-    )
-
-    const {registrationStatus} = filteredList[0]
-
+  getClickedId = id => {
     this.setState({
-      eventStatus: registrationStatus,
+      activeEventId: id,
     })
   }
 
-  renderEventLists = () => (
-    <ul className="events-container">
-      {eventsList.map(event => (
-        <EventItem
-          key={event.id}
-          eventDetails={event}
-          getClickedId={this.getClickedId}
-        />
-      ))}
-    </ul>
-  )
-
-  renderEventStatus = () => {
-    const {eventStatus} = this.state
-
-    const message = eventStatus
-
+  renderEventLists = () => {
+    const {activeEventId} = this.state
     return (
-      <div className="status-container">
-        <ActiveEventRegistrationDetails
-          registrationDetails={eventStatus}
-          key={message}
-        />
-      </div>
+      <ul className="events-container">
+        {eventsList.map(event => (
+          <EventItem
+            key={event.id}
+            eventDetails={event}
+            getClickedId={this.getClickedId}
+            isActive={event.id === activeEventId}
+          />
+        ))}
+      </ul>
     )
   }
+
+  registrationDetails = () => {
+    const {activeEventId} = this.state
+    const activeEventDetails = eventsList.find(
+      event => event.id === activeEventId,
+    )
+    if (activeEventDetails) {
+      return activeEventDetails.registrationStatus
+    }
+    return ''
+  }
+
+  renderEventStatus = () => (
+    <div className="status-container">
+      <ActiveEventRegistrationDetails
+        registrationDetails={this.registrationDetails()}
+      />
+    </div>
+  )
 
   render() {
     return (

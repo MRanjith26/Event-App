@@ -2,7 +2,6 @@
 import './index.css'
 
 const statusConstant = {
-  initial: 'INITIAL',
   registered: 'REGISTERED',
   yetToRegister: 'YET_TO_REGISTER',
   closed: 'REGISTRATIONS_CLOSED',
@@ -63,8 +62,6 @@ const ActiveEventRegistrationDetails = props => {
   )
 
   switch (registrationDetails) {
-    case statusConstant.initial:
-      return renderInitialView()
     case statusConstant.yetToRegister:
       return renderYetToRegisteredView()
     case statusConstant.registered:
@@ -72,7 +69,7 @@ const ActiveEventRegistrationDetails = props => {
     case statusConstant.closed:
       return renderRegistrationClosedView()
     default:
-      return null
+      return renderInitialView()
   }
 }
 export default ActiveEventRegistrationDetails
